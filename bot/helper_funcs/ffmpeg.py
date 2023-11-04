@@ -34,7 +34,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     # https://stackoverflow.com/a/13891070/4723940
     kk = video_file.split("/")[-1]
     aa = kk.split(".")[-1]
-    out_put_file_name = kk.replace(f".{aa}", "[@Anime_Compass].mkv")
+    out_put_file_name = kk.replace(f".{aa}", "[@Toonswebofficel].mkv")
     #out_put_file_name = video_file + "_compressed" + ".mkv"
     progress = output_directory + "/" + "progress.txt"
     with open(progress, 'w') as f:
@@ -48,7 +48,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     resolution.append("854x480")
     preset.append("veryfast")
     audio_b.append("64k")
-    watermark.append('-vf "drawtext=fontfile=font.ttf:fontsize=27:fontcolor=white:bordercolor=black@0.50:x=w-tw-10:y=10:box=1:boxcolor=black@0.5:boxborderw=6:text=Anime Compass"')
+    watermark.append('-vf "drawtext=fontfile=font.ttf:fontsize=27:fontcolor=white:bordercolor=black@0.50:x=w-tw-10:y=10:box=1:boxcolor=black@0.5:boxborderw=6:text=Toonsweb"')
 
     file_genertor_command = f'ffmpeg -hide_banner -loglevel quiet -progress "{progress}" -i "{video_file}" {watermark[0]}  -c:v {codec[0]}  -map 0 -crf {crf[0]} -c:s copy -pix_fmt yuv420p -s {resolution[0]} -b:v 150k -c:a libopus -b:a {audio_b[0]} -preset {preset[0]}  "{out_put_file_name}" -y'
  #Done !!
