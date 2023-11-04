@@ -348,7 +348,7 @@ async def incoming_compress_message_f(update):
       upload = await bot.send_document(
         chat_id=update.chat.id,
         document=o,
-        caption=caption,
+        caption=joined_string,
         force_document=True,
         #duration=duration,
         thumb="https://www.linkpicture.com/q/1670327086847_2.jpg",
